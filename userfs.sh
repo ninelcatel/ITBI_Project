@@ -37,7 +37,7 @@ fi
 			if [ "$isActive" = "yes" ];
 				then
 					ps -u "$user" > "/home/userFS/$user/procs.txt"
-					# echo "" > "/home/userFS/$user/lastLogin.txt" #daca nu vremsa aratam lastlogin pt un utilizator logat
+					rm /home/userFS/$user/lastLogin.txt
 
 			else
 				last -n 1 "$user" | head -n 1 | awk '{print $4 " " $5 " " $6 " " $7}' > /home/userFS/$user/lastLogin.txt
